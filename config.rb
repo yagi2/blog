@@ -106,7 +106,7 @@ activate :livereload
 set :site_url, 'http://blog.yagi2.com'
 set :site_author, 'やぎにい'
 set :site_title, 'やぎ小屋'
-set :site_description, 'ですくりぷしょん'
+set :site_description, 'やぎのメモだよ。'
 # Select the theme from bootswatch.com.
 # If false, you can get plain bootstrap style.
 # set :theme_name, 'flatly'
