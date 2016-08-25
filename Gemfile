@@ -21,3 +21,6 @@ gem "nokogiri", "~> 1.6.1"
 
 # For feed.xml.builder/sitemap.xml.builder
 gem "builder", "~> 3.0"
+
+# For Syntex Highlight
+gem "middleman-syntax", "~> 2.0.0"

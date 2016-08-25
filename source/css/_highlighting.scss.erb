@@ -1,0 +1,36 @@
+<%= Rouge::Themes::Github.render(:scope => '.highlight') %>
+
+.highlight {
+  margin-bottom: 2em;
+  background: #fff;
+  .gutter {
+    width: 50px;
+    background: #fafafa;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  table {
+    width: 100%;
+    table-layout: fixed;
+    td {
+      padding: 0;
+      border: solid 1px #ddd;
+    }
+  }
+ .lineno{
+    color: #999;
+    font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  }
+
+  pre {
+    padding: 0.5em;
+    overflow-x: auto;
+    white-space: pre;
+    word-wrap: inherit;
+  }
+}
