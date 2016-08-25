@@ -1,0 +1,40 @@
+---
+pageable: true
+per_page: 10
+---
+- page_articles.each_with_index do |article, i|
+  h1
+    = link_to article.title, article
+  p
+    - article.tags.each do |tag|
+      small.label.label-default
+        = tag
+  hr
+  p
+    span.glyphicon.glyphicon-time
+    |  Posted on 
+    = article.date.strftime('%b %e')
+  hr
+  - if article.data.image_src
+    img.img-responsive src=article.data.image_src
+    hr
+  = article.summary
+  a.btn.btn-primary href=article.url
+    | Read More
+    span.glyphicon.glyphicon-chevron-right
+  hr
+- if paginate
+  - if num_pages > 1
+    .well-sm
+      ul.pager
+        - if page_number > 1
+          li.previous
+            = link_to '&larr;', prev_page
+        span.text-center
+          | Page 
+          = page_number
+          |  of 
+          = num_pages
+        - if page_number < num_pages
+          li.next
+            = link_to '&rarr;', next_page

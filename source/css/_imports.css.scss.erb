@@ -1,0 +1,17 @@
+/*
+  Put any imports and such here. 
+  It generally keeps the main css page clean.
+*/
+
+<% if theme_name %> 
+@import "sass-bootstrap/lib/variables";
+@import "bootswatch-scss/<%=theme_name%>/variables";
+<% end %>
+@import "sass-bootstrap/lib/bootstrap";
+<% if theme_name %> 
+@import "bootswatch-scss/<%=theme_name%>/bootswatch";
+<% end %>
+
+@import "font-awesome/scss/font-awesome";
+
+// @import "compass";
