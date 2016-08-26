@@ -113,7 +113,7 @@ set :site_description, 'やぎのメモだよ。'
 # set :theme_name, 'flatly'
 set :theme_name, 'flatly'
 # set @analytics_account, like "XX-12345678-9"
-@analytics_account = false
+@analytics_account = "UA-28203375-6"
 
 # Asset Settings
 set :css_dir, 'css'
