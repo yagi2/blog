@@ -192,4 +192,4 @@ $ sudo crontab -u root -e  # サービスの停止/開始のためrootで
   
 余談ですが、今それを適用したyagi2.comは[Qualys SSL Labs](https://www.ssllabs.com/index.html)でA+を取得しています。  
   
-![](articles/2016-08-31-lets-encrypt-001.png)
+![](2016/08-31-lets-encrypt-001.png)
