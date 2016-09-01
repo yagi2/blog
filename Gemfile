@@ -2,16 +2,17 @@
 # the following line to use "https"
 source 'http://rubygems.org'
 
-gem "middleman", "~> 3.2.2"
+gem "middleman", "~> 3.3.3"
 gem "middleman-blog", "~> 3.5.1"
 gem "middleman-target", "~> 0.0.6"
 gem "middleman-deploy", "~> 0.1.4"
+gem 'middleman-disqus'
 
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
 
 # For Slim
-gem "slim", "~> 2.0.2"
+gem "slim"
 
 # For Markdown
 gem "redcarpet", "~> 3.1.1"
