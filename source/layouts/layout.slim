@@ -37,11 +37,22 @@ html
           hr
             = disqus
           hr
+            p.text-center
+              - if !(current_article.next_article == nil)
+                = link_to "<< #{current_article.next_article.title}", current_article.next_article
+              - else
+                | 最新の記事です。
+              | 　　　　　
+              - if !(current_article.previous_article == nil)
+                = link_to "#{current_article.previous_article.title} >>", current_article.previous_article
+              - else
+                | 一番古い記事です。
+          hr
           aside
             h3
               | Recent Articles
             ol
-              - blog.articles[0...10].each do |article|
+              - blog.articles[0...5].each do |article|
                 li
                   = link_to article.title, article
                   span<>
