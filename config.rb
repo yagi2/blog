@@ -30,6 +30,10 @@ activate :blog do |blog|
   # blog.page_link = "page/{num}"
 end
 
+activate :disqus do |d| 
+  d.shortname = 'yagi2-blog'
+end
+
 page "/feed.xml", layout: false
 page "/sitemap.xml", layout: false
 
@@ -159,7 +163,7 @@ configure :build do
   # activate :asset_hash
 
   # Use relative URLs
-  activate :relative_assets
+  # activate :relative_assets
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
@@ -177,3 +181,7 @@ end
 #   deploy.password = "ftp-password"
 #   deploy.path = "ftp-path"
 # end
+
+###
+# Comment Settings (DISQUS)
+###
