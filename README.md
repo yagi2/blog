@@ -1,9 +1,10 @@
 # blog
 [やぎ小屋](http://blog.yagi2.com)
 
-# Todo
-* CIする。
-* 吐かれた静的ファイルを今めっちゃ手動でゴリゴリ置き換えてるのでなんとかする。
-* config.rbをちゃんと俺好みのものに書き換える。
-* ツイートボタンとかそういうソーシャルボタン。
-* イメージサイズをどうにかしたい（diaryも)
+# memo
+## 記事を追加する時
+```
+git checkout -b article/ARTICLE_TITLE  
+bundle exec middleman article "ARTICLE_TITLE"
+# 書き終わったら
+bundle exec middleman buildx1
