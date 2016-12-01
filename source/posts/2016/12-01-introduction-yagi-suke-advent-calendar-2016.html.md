@@ -1,10 +1,10 @@
 ---
 title: やぎすけ Advent Calendar 2016
 date: 2016-12-01 08:18 JST
-tags: やぎすけAdventCalendar-2016
+tags: やぎすけAdventCalendar2016
 ---
 
-この記事は[http://www.adventar.org/calendars/1800](やぎすけ Advent Calendar 2016)の1日目の記事です。  
+この記事は[やぎすけ Advent Calendar 2016](http://www.adventar.org/calendars/1800)の1日目の記事です。  
 <br>
 みなさん、こんにちは。やぎにいです。  
 本日は2016年12月1日、ついに今年も12月が始まってしまいました。
