@@ -60,7 +60,7 @@ https://github.com/JakeWharton/timber/blob/master/timber/src/main/java/timber/lo
 
 ```java
 public class MyDebugTree extends Timber.DebugTree {
-  // ここで自分ん好みのTreeをつくる
+  // ここで自分好みのTreeをつくる
 }
 ```
 
@@ -68,12 +68,6 @@ public class MyDebugTree extends Timber.DebugTree {
 あの機能はログメッセージに` at packageName(fileName:lineNumber)`が付けばいいのでそれっぽく書きます。  
 
 ```java
-package com.yagi2.recyclerview_sample;
-
-import android.util.Log;
-
-import timber.log.Timber;
-
 public class MyDebugTree extends Timber.DebugTree {
     @Override
     protected void log(int priority, String tag, String message, Throwable t) {
