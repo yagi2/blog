@@ -4,6 +4,8 @@ date: 2016-12-05 18:41 JST
 tags: やぎすけAdventCalendar2016,Android
 ---
 
+**2016-12-06 20:30 JST ネットワーク状況を見る の部分に追記しています**
+
 こんにちは、やぎにいです。  
 [やぎすけ Advent Calendar 2016](http://www.adventar.org/calendars/1800)の5日目です。  
 昨日は僕が[Androidプロジェクトを作って結構な確率で導入するライブラリ](https://blog.yagi2.com/2016/12/04/recommended-android-library.html)を書いて5つのライブラリを紹介しました。  
@@ -107,15 +109,27 @@ Realm公式で[Realm Browser](https://realm.io/jp/docs/java/latest/#realm-browse
 // OkHttpClientのnetworkInterceptorsにStethoを追加する
 OkHttpClient client = new OkHttpClient();
 client.networkInterceptors().add(new StethoInterceptor());
+
+// 追記 OkHttp3を使っている場合は以下の通りが良いです
+OkHttpClient client = new OkHttpClient.Builder()
+                    .addNetworkInterceptor(new StethoInterceptor())
+                    .build();
 ```
 
 そしてここで生成した`client`を`Retrofit`や`Picasso`の`Builder`に渡してあげます。
 
 ```java
+// 追記 Retrofit1.9.0未満だと動いてくれません。
 // Retrofit
 RestAdapter restAdapter =  new RestAdapter.Builder()
         .setEndpoint("http://example.com/")
         .setClient(new OkCkient(client))
+        .build();
+
+// 追記 Retrofit2ではこうなります。
+Retrofit retrofit = new Retrofit.Builder()
+        .baseUrl("http://example.com")
+        .client(client)
         .build();
 
 // Picasso
@@ -125,7 +139,17 @@ Picasso picasso = new Picasso.Builder(this)
 
 // Picassoはこれをシングルトンインスタンスとして指定する
 Picasso.setSingletonInstance(picasso);
+
+// 追記 使っているOkHttpがOkHttp3の場合はPicassoにそのまま渡せないのでこうします。
+Picasso picasso = new Picasso.Builder(this)
+        .downloader(new OkHttp3Downloader(client))
+        .build();
 ```
+
+OkHttp3Downloaderは[JakeWharton/picasso2-okhttp3-downloader](https://github.com/JakeWharton/picasso2-okhttp3-downloader)を使ってください。  
+`build.gradle`に`compile 'com.jakewharton.picasso:picasso2-okhttp3-downloader:1.1.0'`を追加してあげるだけです。  
+今日`Retrofit2`に以降しようとした際に判明しましたので追記しておきます。  
+RetrofitとRetrofit2は全然違う書き方になるんですね……。これも新しい知見として得ることが出来ました。いつかRetrofitからRetrofit2に移行する方法みたいなエントリも書きたいですね。
 
 以上のように設定してあげればChromeのDevToolsで確認できます。  
 <br><br>
