@@ -1,11 +1,11 @@
 ---
 title: さくっとRecyclerViewを使ってリストを作成する
 date: 2016-12-03 01:47 JST
-tags: やぎすけAdventCalendar2016
+tags: やぎすけAdventCalendar2016,Android
 ---
   
 こんにちは、やぎにいです！  
-[やぎすけ Advent Calendar 2016](http://www.adventar.org/calendars/1800)3日目です。今のところ順調ですね。  
+[やぎすけ Advent Calendar 2016](http://www.adventar.org/calendars/1800)の3日目です。今のところ順調ですね。  
 2日目に昨日はうなすけが[やぎすけ Advent Calendar 2日目 Gemfileの整頓](https://blog.unasuke.com/2016/yac-day02-gemfile/)を書いてくれました。  
 ここに出てきたRailsアプリはアドベントカレンダー後半で数日に渡って公開していきたいと思います。  
 <br>
