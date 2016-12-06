@@ -1,11 +1,11 @@
 ---
 title: TimberをLogの代わりに使用して快適ログ確認
 date: 2016-12-06 05:49 JST
-tags: やぎすけAdventCalendar2016
+tags: やぎすけAdventCalendar2016,Android
 ---
 
 こんにちは、やぎにいです。  
-[やぎすけ Advent Calendar 2016](http://www.adventar.org/calendars/1800)6日目です。そろそろキツくなってきましたね。  
+[やぎすけ Advent Calendar 2016](http://www.adventar.org/calendars/1800)の6日目です。そろそろキツくなってきましたね。  
 昨日は僕が[Stethoを使ってGoogle Chromeでデバッグをする](http://localhost:4567/2016/12/05/how-to-use-stetho.html)を書きました。  
   
 今日は[Androidプロジェクトを作って結構な確率で導入するライブラリ](https://blog.yagi2.com/2016/12/04/recommended-android-library.html)で書いた2つ目のTimberの使い方をまとめたいと思います。
