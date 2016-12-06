@@ -1,11 +1,11 @@
 ---
 title: Androidプロジェクトを作って結構な確率で導入するライブラリ
 date: 2016-12-04 02:17 JST
-tags: やぎすけAdventCalendar2016
+tags: やぎすけAdventCalendar2016, Android
 ---
 
 こんにちは、やぎにいです！  
-[やぎすけ Advent Calendar 2016](http://www.adventar.org/calendars/1800)4日目です。
+[やぎすけ Advent Calendar 2016](http://www.adventar.org/calendars/1800)の4日目です。
 昨日は僕が[さくっとRecyclerViewを使ってリストを作成する](https://blog.yagi2.com/2016/12/03/how-to-use-recyclervie.html)を書きました。
 <br><br>
 ## 概要
