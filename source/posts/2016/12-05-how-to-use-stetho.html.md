@@ -1,11 +1,11 @@
 ---
 title: Stethoを使ってGoogle Chromeでデバッグをする
 date: 2016-12-05 18:41 JST
-tags: やぎすけAdventCalendar2016
+tags: やぎすけAdventCalendar2016,Android
 ---
 
-こんにちは、やぎにいです。
-[やぎすけ Advent Calendar 2016](http://www.adventar.org/calendars/1800)5日目です。  
+こんにちは、やぎにいです。  
+[やぎすけ Advent Calendar 2016](http://www.adventar.org/calendars/1800)の5日目です。  
 昨日は僕が[Androidプロジェクトを作って結構な確率で導入するライブラリ](https://blog.yagi2.com/2016/12/04/recommended-android-library.html)を書いて5つのライブラリを紹介しました。  
 今日はその中から[Stetho](https://github.com/facebook/stetho)の使い方をまとめていきます。  
 <br><br>
