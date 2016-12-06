@@ -1,7 +1,7 @@
 ---
 title: Androidプロジェクトを作って結構な確率で導入するライブラリ
 date: 2016-12-04 02:17 JST
-tags: やぎすけAdventCalendar2016, Android
+tags: やぎすけAdventCalendar2016,Android
 ---
 
 こんにちは、やぎにいです！  
