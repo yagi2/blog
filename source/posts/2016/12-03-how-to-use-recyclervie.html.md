@@ -1,7 +1,7 @@
 ---
 title: さくっとRecyclerViewを使ってリストを作成する
 date: 2016-12-03 01:47 JST
-tags: やぎすけAdventCalendar2016, Android
+tags: やぎすけAdventCalendar2016,Android
 ---
   
 こんにちは、やぎにいです！  
