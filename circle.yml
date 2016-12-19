@@ -1,0 +1,5 @@
+deployment:
+  push_to_server:
+    branch: master
+    commands:
+      - rsync -rltgoDvzO --no-p --del -e "ssh -p $PORT_NUMBER" build $USER_NAME@$HOST_NAME:$DOCUMENT_ROOT
