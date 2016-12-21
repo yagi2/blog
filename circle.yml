@@ -1,3 +1,21 @@
+machine:
+  timezone: Asia/Tokyo
+
+  ruby:
+    version: 2.3.3
+
+dependencies:
+  cache_directories:
+    - "vendor/bundle"
+    - "build"
+  
+  pre:
+    - gem install bundler -v '1.12.5'
+  
+test:
+  override:
+    - bundle exec middleman build
+    
 deployment:
   push_to_server:
     branch: master
