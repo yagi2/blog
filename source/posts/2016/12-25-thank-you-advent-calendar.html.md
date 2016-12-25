@@ -8,7 +8,8 @@ tags: やぎすけAdventCalendar2016
 [やぎすけ Advent Calendar 2016](http://www.adventar.org/calendars/1800)の25日目です。  
 ついに最終日になってしまいました。  
 
-昨日はうなすけが何か書いてくれる予定でしたが、まだ24日なので投稿され次第、ここに追加します。 
+<s>昨日はうなすけが何か書いてくれる予定でしたが、まだ24日なので投稿され次第、ここに追加します</s>  
+昨日（今日）はうなすけが[やぎすけ Advent Calendar 24日目 status codeの修正](https://blog.unasuke.com/2016/yac-day24-http-status-code/)を書いてくれました。
 
 今日は最終日なのでポエムと言うか短くおわりの挨拶をします（さっきまでクリスマスでお酒にのまれてしまっていた）
 <br><br>
