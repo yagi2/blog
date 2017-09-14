@@ -1,4 +1,4 @@
-| <!doctype html> 
+| <!doctype html>
 html
   head
     meta[charset="utf-8"]
@@ -27,7 +27,7 @@ html
             hr
             p
               span.glyphicon.glyphicon-time
-              |  Posted on 
+              |  Posted on
               = current_article.date.strftime('%b %e')
             hr
             - if current_article.data.image_src
@@ -35,9 +35,18 @@ html
               hr
           = yield
           - if !current_article.nil?
+            / ここslimっぽくするかgem使うかして修正したい
             br
-            <a href="https://twitter.com/share" class="twitter-share-button" data-via="magical_reisen" data-size="large" data-dnt="true">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-            hr
+            <a href="https://twitter.com/share" class="twitter-share-button" data-via="magical_reisen" data-size="large" data-dnt="true">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>&emsp;
+            <a href="http://b.hatena.ne.jp/entry/" class="hatena-bookmark-button" data-hatena-bookmark-layout="vertical-normal" data-hatena-bookmark-lang="ja" title="このエントリーをはてなブックマークに追加"><img src="https://b.st-hatena.com/images/entry-button/button-only@2x.png" alt="このエントリーをはてなブックマークに追加" width="20" height="20" style="border: none;" /></a><script type="text/javascript" src="https://b.st-hatena.com/js/bookmark_button.js" charset="utf-8" async="async"></script>&emsp;
+            <iframe src="https://www.facebook.com/plugins/share_button.php?href=#{site_url}/#{current_article.url}&layout=button_count&size=large&mobile_iframe=true&width=87&height=28&appId" width="87" height="28" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>&emsp;
+            <div class="line-it-button" data-lang="ja" data-type="share-a" data-url="#{site_url}/#{current_article.url}" style="display: none;"></div>&emsp;
+            <script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+            <script src="https://apis.google.com/js/platform.js" async defer></script>
+            <g:plusone size="tall"></g:plusone>&emsp;
+            <a data-pocket-label="pocket" data-pocket-count="horizontal" class="pocket-btn" data-lang="en"></a>
+            <script type="text/javascript">!function(d,i){if(!d.getElementById(i)){var j=d.createElement("script");j.id=i;j.src="https://widgets.getpocket.com/v1/j/btn.js?v=1";var w=d.getElementById(i);d.body.appendChild(j);}}(document,"pocket-btn-js");</script>
+            br
               = disqus
             hr
               p.text-center
@@ -63,6 +72,6 @@ html
                       = article.date.strftime('%b %e')
             hr
           p.text-center
-            | 2016 
+            | 2016
             = link_to "#{site_title}", "/"
     = javascript_include_tag  "all"
