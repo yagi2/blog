@@ -30,7 +30,7 @@ activate :blog do |blog|
   # blog.page_link = "page/{num}"
 end
 
-activate :disqus do |d| 
+activate :disqus do |d|
   d.shortname = 'yagi2-blog'
 end
 
@@ -66,7 +66,7 @@ Slim::Engine.set_options :shortcut => {
   '&' => {:tag => 'input', :attr => 'type'}
 }
 
-# Markdown settings 
+# Markdown settings
 set :markdown, :tables => true, :autolink => true, :gh_blockcode => true, :fenced_code_blocks => true, :with_toc_data => true
 set :markdown_engine, :redcarpet
 
@@ -123,6 +123,7 @@ set :theme_name, 'flatly'
 set :css_dir, 'css'
 set :js_dir, 'js'
 set :images_dir, 'images'
+set :fonts_dir, 'fonts'
 
 after_configuration do
   @bower_config = JSON.parse(IO.read("#{root}/.bowerrc"))
@@ -175,7 +176,7 @@ end
 # Deploy settings
 ###
 
-# ftp deployment configuration. 
+# ftp deployment configuration.
 # activate :deploy do |deploy|
 #   deploy.method = :ftp
 #   deploy.host = "ftp-host"
