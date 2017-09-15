@@ -115,7 +115,7 @@ set :site_description, 'やぎのメモだよ。'
 # Select the theme from bootswatch.com.
 # If false, you can get plain bootstrap style.
 # set :theme_name, 'flatly'
-set :theme_name, 'flatly'
+set :theme_name, 'readable'
 # set @analytics_account, like "XX-12345678-9"
 @analytics_account = "UA-28203375-6"
 
