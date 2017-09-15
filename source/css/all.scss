@@ -4,10 +4,17 @@
 @import "imports";
 @import "highlighting";
 
+@import "koruri";
+
 body {
+  font-family: Koruri-Regular;
   margin-top: $marginTopBody;
 }
 
 .pocket-btn {
   display: inline-block;
+}
+
+h1 {
+  font-family: Koruri-SemiBold;
 }
