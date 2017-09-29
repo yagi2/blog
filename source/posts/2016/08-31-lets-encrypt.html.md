@@ -6,7 +6,7 @@ tags: 備忘録, Let'sEncrypt, サーバ, セキュリティ
 
 2017/09/29 追記  
 <font color="red">この記事は備忘録として、使ったコマンドをそのまま掲載していました（ドメイン名やメールアドレスがそのまま）が、おそらくそれをそのままコピペしたであろうことによって自分のメールアドレスに知らないドメインの証明書有効期限切れアラートメールが飛んできたので全てexample等に置き換えの修正を行っています。</font><br>  
-<font color="red">以前の版を読みたい方はこのブログは全てGitHub上で後悔しているので<a href="https://github.com/yagi2/blog/commit/f27c40b6fa84ab842ee6025d51c9b46a268a2529">こちら</a>を参照してください。（記事本文のMarkdown形式が読めます）</font><br>  
+<font color="red">以前の版を読みたい方はこのブログは全てGitHub上で公開しているので<a href="https://github.com/yagi2/blog/commit/f27c40b6fa84ab842ee6025d51c9b46a268a2529">こちら</a>を参照してください。（記事本文のMarkdown形式が読めます）</font><br>  
 
 <br>
 こんにちは。やぎにいです。
