@@ -4,6 +4,11 @@ date: 2016-08-31 02:19 JST
 tags: 備忘録, Let'sEncrypt, サーバ, セキュリティ
 ---
 
+2017/09/29 追記  
+<font color="red">この記事は備忘録として、使ったコマンドをそのまま掲載していました（ドメイン名やメールアドレスがそのまま）が、おそらくそれをそのままコピペしたであろうことによって自分のメールアドレスに知らないドメインの証明書有効期限切れアラートメールが飛んできたので全てexample等に置き換えの修正を行っています。</font><br>  
+<font color="red">以前の版を読みたい方はこのブログは全てGitHub上で後悔しているので<a href="https://github.com/yagi2/blog/commit/f27c40b6fa84ab842ee6025d51c9b46a268a2529">こちら</a>を参照してください。（記事本文のMarkdown形式が読めます）</font><br>  
+
+<br>
 こんにちは。やぎにいです。
 今回は[Let's Encrypt](https://letsencrypt.org/)というものを使って、自分のサーバをHTTPS対応させました。  
 （日本語ポータルサイトは[こっち](https://letsencrypt.jp/))
@@ -68,7 +73,7 @@ $ sudo service iptables restart
 ```
 
 ## 証明書を取得する
-今回はCertbotクライアントを使用してSSL/SSL/TLSサーバ証明書を取得します。 
+今回はCertbotクライアントを使用してSSL/SSL/TLSサーバ証明書を取得します。
 Certbotをgitからcloneするのでgitがインストールされていない場合はgitをインストールし、Certbotのリポジトリをcloneします。
 
 ```bash
@@ -84,22 +89,21 @@ $ cd certbot
 # Apacheが動いていると途中で怒られるので予め停止しておく
 $ sudo service httpd stop
 
-# 今回は備忘録を兼ねているので、ドメインはyagi2.comを使っています
 # 自分のドメインやメールアドレスに適時置き換えてください
 # 今回は同一サーバでホストしている3ドメインに対して証明書をリクエストします。
-$ sudo ./certbot-auto certonly --standalone --email mail@yagi2.com -d yagi2.com -d blog.yagi2.com -d diary.yagi2.com
+$ sudo ./certbot-auto certonly --standalone --email mail@example.com -d exmaple.com -d blog.example.com -d diary.example.com
 ```
 
 お疲れ様でした！これで証明書の取得は完了です。簡単ですね。素晴らしい世界です。  
 本当に存在するのか確かめてみましょう
 
 ```bash
-$ sudo ls -l /etc/letsencrypt/live/yagi2.com
+$ sudo ls -l /etc/letsencrypt/live/example.com
 合計 0
-lrwxrwxrwx 1 root root 33  8月 28 04:29 2016 cert.pem -> ../../archive/yagi2.com/cert1.pem
-lrwxrwxrwx 1 root root 34  8月 28 04:29 2016 chain.pem -> ../../archive/yagi2.com/chain1.pem
-lrwxrwxrwx 1 root root 38  8月 28 04:29 2016 fullchain.pem -> ../../archive/yagi2.com/fullchain1.pem
-lrwxrwxrwx 1 root root 36  8月 28 04:29 2016 privkey.pem -> ../../archive/yagi2.com/privkey1.pem
+lrwxrwxrwx 1 root root 33  8月 28 04:29 2016 cert.pem -> ../../archive/example.com/cert1.pem
+lrwxrwxrwx 1 root root 34  8月 28 04:29 2016 chain.pem -> ../../archive/example.com/chain1.pem
+lrwxrwxrwx 1 root root 38  8月 28 04:29 2016 fullchain.pem -> ../../archive/example.com/fullchain1.pem
+lrwxrwxrwx 1 root root 36  8月 28 04:29 2016 privkey.pem -> ../../archive/example.com/privkey1.pem
 ```
 
 同じようにありましたか？上からそれぞれ、「サーバ証明書（公開鍵）」「中間証明書」「サーバ証明書と中間証明書が統合されたファイル」「秘密鍵」です。
@@ -123,38 +127,38 @@ NameVirtualHost *:443
 ```
 
 ``` bash
-# 各バーチャルホストの設定ファイルを編集する（今回はとりあえず yagi2.com の分）
-$ sudo emacs /etc/httpd/conf.d/virtualhost-yagi2.com.conf
+# 各バーチャルホストの設定ファイルを編集する
+$ sudo emacs /etc/httpd/conf.d/virtualhost-example.com.conf
 
 # 証明書の指定とSSLエンジンを有効にする （今回は実際のconfigファイルを以下に記載します）
 <VirtualHost *:443>
-    ServerName yagi2.com
+    ServerName example.com
     DocumentRoot [コンテンツのパス]
     ErrorLog logs/virtual-error_log
     CustomLog logs/virtual-access_log combined env=!no_log
 
     SSLEngine on
-    SSLCertificateFile /etc/letsencrypt/live/yagi2.com/cert.pem
-    SSLCertificateKeyFile /etc/letsencrypt/live/yagi2.com/privkey.pem
-    SSLCertificateChainFile /etc/letsencrypt/live/yagi2.com/chain.pem
+    SSLCertificateFile /etc/letsencrypt/live/example.com/cert.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/example.com/privkey.pem
+    SSLCertificateChainFile /etc/letsencrypt/live/example.com/chain.pem
 </VirtualHost>
 ```
 
-これで yagi2.com はSSLに対応しました。  
+これで example.com はSSLに対応しました。  
 Apacheを再起動して確認してみましょう。  
 
 ```bash
 $ sudo service httpd restart
 ```
 
-ブラウザで[https://yagi2.com]を開いてみるとちゃんとHTTPS通信されていることがわかりました。  
+ブラウザで開いてみるとちゃんとHTTPS通信されていることがわかりますね！  
 これで完了です！ おめでとうございます。
 複数バーチャルホストをしている場合は、適時その分コンフィグを書いてあげてください。
 
 ## 証明書を更新する
 Let's Encryptで取得した証明書の期限は90日になっています。よって定期的に自分で更新して上げる必要があります。  
 なぜ90日なのかは[Why ninety-day lifetimes for certificates? - Let's Encrypt](https://letsencrypt.org/2015/11/09/why-90-days.html)こちらをどうぞ。セキュリティの為と証明書更新の促進みたいですね。  
-  
+
 更新は簡単です。
 
 ```bash
@@ -171,7 +175,7 @@ $ sudo service httpd start
 #! /bin/bash
 
 /etc/rc.d/init.d/httpd stop
-/usr/bin/scl enable python27 '/home/yagi2/certbot/certbot-auto renew > /home/yagi2/certbot/logs/renew.log 2>&1'
+/usr/bin/scl enable python27 '/home/user/certbot/certbot-auto renew > /home/user/certbot/logs/renew.log 2>&1'
 /etc/rc.d/init.d/httpd start
 ```
 
@@ -180,7 +184,7 @@ $ sudo service httpd start
 $ sudo crontab -u root -e  # サービスの停止/開始のためrootで
 
 # 以下を書く 毎月25日6次の設定
-00 06 25 * * /home/yagi2/certbot/scripts/encrypt-renew-script.sh
+00 06 25 * * /home/user/certbot/scripts/encrypt-renew-script.sh
 ```
 
 これで自動更新の設定は完了です。（僕自信まだ導入してから次の25日が来ていないので動くかは未確認です）  
@@ -189,7 +193,7 @@ $ sudo crontab -u root -e  # サービスの停止/開始のためrootで
 これでLet's Encryptを使って証明書を取得しHTTPS対応、そして証明書の自動更新の設定が完了しました。  
 ちょっと長かったですが、これでセキュアなホスティングをすることができますね。  
 長くなってしまったため次回になりますが、次回はHTTPにリクエストが来た場合にHTTPSにリダイレクトしたりHSTSを導入したりして、サイトの評価で高ランクを取るセキュアなサイト構築の手順をご紹介します。  
-  
-余談ですが、今それを適用したyagi2.comは[Qualys SSL Labs](https://www.ssllabs.com/index.html)でA+を取得しています。  
-  
+
+余談ですが 今回適用したyagi2.comは[Qualys SSL Labs](https://www.ssllabs.com/index.html)でA+を取得しています。  
+
 ![](2016/08-31-lets-encrypt-001.png)
