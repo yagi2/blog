@@ -17,6 +17,10 @@ html
     meta name='twitter:creator' content="@magical_reisen"
     meta name='twitter:domain' content='blog.yagi2.com'
     
+    meta name='theme-color' content='#DF7401'
+    
+    link rel='icon' href='https://yagi2.com/images/profile_t.png' sizes='192x192'
+    
     meta[name="description" content="#{page_description.gsub('"', '\'')}"]
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
     /[if lt IE 9]
