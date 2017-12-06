@@ -21,6 +21,20 @@ html
     
     link rel='icon' href='https://yagi2.com/images/profile_t.png' sizes='192x192'
     
+    script type="text/javascript" src="http://s.hatena.ne.jp/js/HatenaStar.js"
+    
+    script type="text/javascript"
+      | Hatena.Star.Token = '79eda6039b2cac9f89c1980e6a03da7c2525a71d';  
+      | Hatena.Star.SiteConfig = {
+      |   entryNodes: {
+      |     'div.article': {
+      |       uri: 'h1 a',
+      |       title: 'h1',
+      |       container: 'h1'
+      |     }
+      |   }
+      | };
+  
     meta[name="description" content="#{page_description.gsub('"', '\'')}"]
     = feed_tag :atom, "#{blog.options.prefix.to_s}/feed.xml", title: "Atom Feed"
     /[if lt IE 9]
@@ -35,20 +49,21 @@ html
         = partial "partials/sidebar"
         div.col-lg-9.col-md-9
           - unless current_article.nil?
-            h1
-              = current_article.title
-            - current_article.tags.each do |tag|
-              small.label.label-default
-                = tag
-            hr
-            p
-              span.glyphicon.glyphicon-time
-              |  Posted on
-              = current_article.date.strftime('%b %e')
-            hr
-            - if current_article.data.image_src
-              img.img-responsive src=current_article.data.image_src
+            div.article
+              h1
+                = link_to "#{current_article.title}", current_article
+              - current_article.tags.each do |tag|
+                small.label.label-default
+                  = tag
               hr
+              p
+                span.glyphicon.glyphicon-time
+                |  Posted on 
+                = current_article.date.strftime('%b %e')
+              hr
+              - if current_article.data.image_src
+                img.img-responsive src=current_article.data.image_src
+                hr
           = yield
           - if !current_article.nil?
             / ここslimっぽくするかgem使うかして修正したい
@@ -88,6 +103,6 @@ html
                       = article.date.strftime('%b %e')
             hr
           p.text-center
-            | 2016
+            | 2017
             = link_to "#{site_title}", "/"
     = javascript_include_tag  "all"
