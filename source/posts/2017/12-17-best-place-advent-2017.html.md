@@ -90,7 +90,7 @@ tags: AdventCalendar2017, 雑記
   
 <img src="/images/2017/12-17-best-place-advent-2017-006.jpg" width="100%">  
   
-<img src="/images/2017/12-17-best-place-advent-2017-006.jpg" width="100%">  
+<img src="/images/2017/12-17-best-place-advent-2017-007.jpg" width="100%">  
   
 城の入り口と広場。広場の方はWindowsの壁紙かよって突っ込んでしまうくらいに綺麗で感動してしまいました。  
 <br>  
