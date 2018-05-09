@@ -11,6 +11,7 @@ dependencies:
   
   pre:
     - gem install bundler -v '1.12.5'
+    - sudo pip install awscli
   
 test:
   override:
@@ -20,4 +21,6 @@ deployment:
   push_to_server:
     branch: master
     commands:
-      - rsync -rltgoDvzO --no-p --del -e "ssh -p $PORT_NUMBER" build $USER_NAME@$HOST_NAME:$DOCUMENT_ROOT
+      - aws s3 sync build s3://$S3_BACKET > /dev/null 2>&1
+      - aws cloudfront create-invalidation --distribution-id $CF_DIST_1 --paths "/*" > /dev/null 2>&1
+      - aws cloudfront create-invalidation --distribution-id $CF_DIST_2 --paths "/*" > /dev/null 2>&1
