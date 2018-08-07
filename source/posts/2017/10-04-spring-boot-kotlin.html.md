@@ -59,7 +59,7 @@ apply plugin: "kotlin-jpa"
 更にDataSourceの設定として、`src/main/resource`の下に`config`ディレクトリを作成し、`application.yml`を追加してそこにDBへの接続情報を書き込む。  
 
 ```yml
-pring:
+spring:
   datasource:
     url: jdbc:postgresql://localhost/[データベース名]
     username: username
